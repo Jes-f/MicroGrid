@@ -11,6 +11,11 @@ model Battery
   Real Qt;
   Real SoC;
   Real E;
+  Modelica.Blocks.Interfaces.RealOutput StateOfCharge annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={0,110})));
 initial equation
   Qt = (1 - SoCO / 100) * Q;
 equation
@@ -18,6 +23,6 @@ equation
   E = E0 - K * Q / (Q - Qt) + A * exp(-B * Qt);
   v = E + R * i;
   SoC = (1 - Qt / Q) * 100;
-
+  StateOfCharge = SoC;
   annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}, grid = {2, 2}, initialScale = 0.1), graphics={  Line(visible = true, origin = {14, 0}, points = {{-90, 0}, {-50, 0}}), Line(visible = true, origin = {-14, 0}, points = {{50, 0}, {90, 0}}), Line(visible = true, origin = {14, 0}, points = {{-50, 40}, {-50, -40}}), Line(visible = true, points = {{-20, 20}, {-20, -20}}), Line(visible = true, points = {{-20, 0}, {20, 0}}), Line(visible = true, points = {{20, 40}, {20, -40}}), Line(visible = true, origin = {-14, 0}, points = {{50, 20}, {50, -20}}), Text(visible = true, textColor = {28, 108, 200}, extent = {{-80, -80}, {80, -40}}, textString = "%name")}));
 end Battery;
