@@ -1,28 +1,28 @@
 within MicroGrid.Storage;
 model Battery "Battery Model"
     extends MicroGrid.Electrical.Interfaces.OnePort;
-    parameter Real E0 = 12.6463 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real Q = 0.65 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real A = 0.65 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real B = 2884.61 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real K = 0.33 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real R = 0.25 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Real SoCO = 90 annotation(Dialog(group="Cell dynamic parameters"));
-    parameter Integer nsB = 1 annotation(Dialog(group = "Number of cells connected in series"));
-    parameter Integer npB = 1 annotation(Dialog(group = "Number of cells connected in parallel"));
-    Real Qt;
-    Real SoC;
-    Real E;
-    Real idc;
-    Real vdc;
+    parameter Real E0 = 12.6463 "Battery constant voltage (V)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real Q = 0.65 "Battery capacity (Ah)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real A = 0.65 "Exponential zone amplitude (V)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real B = 2884.61 "Exponential zone time constant inverse (1/(Ah))" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real K = 0.33 "Polarization voltage (V)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real R = 0.25 "Internal resistance (Ohms)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Real SoCO = 100 "Initial state of charge (%)" annotation(Dialog(group="Cell dynamic parameters"));
+    parameter Integer nsB = 1 annotation(Dialog(group = "Data for physical arrange of cells"));
+    parameter Integer npB = 1 annotation(Dialog(group = "Data for physical arrange of cells"));
+    Real Qt "Actual battery charge";
+    Real SoC "State of charge (%)";
+    Real E "No-load battery voltage (V)";
+    Real idc "Cell current (A)";
+    Real vdc "Cell voltage (V)";
     Modelica.Blocks.Interfaces.RealOutput StateOfCharge annotation (Placement(
           transformation(
           extent={{-10,-10},{10,10}},
           rotation=90,
           origin={0,110})));
-  initial equation
+initial equation
     Qt = (1 - SoCO / 100) * Q;
-  equation
+equation
     der(Qt) = -idc / 3600;
     E = E0 - K * Q / (Q - Qt) + A * exp(-B * Qt);
     vdc = E + R * idc;
