@@ -11,7 +11,7 @@ model BatteryDischarge "Discharge of a 3.7V, 1Ah Lithium-ion battery"
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={-18,8})));
-  Electrical.BasicComponents.resistor resistor       annotation (Placement(
+  Electrical.BasicComponents.resistor resistor annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,

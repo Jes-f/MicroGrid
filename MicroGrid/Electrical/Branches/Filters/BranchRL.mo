@@ -6,9 +6,10 @@ model BranchRL "Branch with resistor and reactor connected in series."
             {90,10}})));
   parameter Modelica.SIunits.Resistance R = 0.1 "Branch resistance";
   parameter Modelica.SIunits.Inductance L = 0.1 "Branch inductance";
-  BasicComponents.resistor resistor(R = R) annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
-  BasicComponents.inductor inductor(i(fixed=true),
-                                    L = L) annotation (Placement(transformation(extent={{10,-10},{30,10}})));
+  BasicComponents.resistor resistor(R=R)
+    annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
+  BasicComponents.inductor inductor(i(fixed=true), L=L)
+    annotation (Placement(transformation(extent={{10,-10},{30,10}})));
 equation
 
   connect(p, resistor.p)

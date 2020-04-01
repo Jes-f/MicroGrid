@@ -12,9 +12,20 @@ model Boost "DC/DC Boost Converter"
   Interfaces.NegativePin Input_n annotation(Placement(transformation(extent = {{-106, -90}, {-86, -70}})));
   Interfaces.PositivePin Output_p annotation(Placement(transformation(extent = {{86, 70}, {106, 90}})));
   Interfaces.NegativePin Output_n annotation(Placement(transformation(extent = {{86, -90}, {106, -70}})));
-  BasicComponents.inductor InputInductor(L = L_boost, i(fixed = true)) annotation(Placement(transformation(extent = {{-36, 16}, {-16, 36}})));
-  BasicComponents.diode diode(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(transformation(extent = {{16, 16}, {36, 36}}, origin = {0.736, -0.357}, rotation = 0), visible = true));
-  BasicComponents.switch switch(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {0, -2})));
+  BasicComponents.inductor InputInductor(L=L_boost, i(fixed=true))
+    annotation (Placement(transformation(extent={{-36,16},{-16,36}})));
+  BasicComponents.diode diode(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(transformation(
+        extent={{16,16},{36,36}},
+        origin={0.736,-0.357},
+        rotation=0), visible=true));
+  BasicComponents.switch switch(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=-90,
+        origin={0,-2})));
   Control.Interfaces.SignalBus DutyRatio annotation(Placement(transformation(extent = {{-14, -112}, {14, -82}})));
   Control.Modulation.SawtoothPWM sawtoothPWM(f = f_s) annotation(Placement(transformation(extent = {{20, -82}, {40, -62}})));
 equation

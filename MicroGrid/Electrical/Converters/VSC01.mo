@@ -8,18 +8,78 @@ model VSC01
   parameter Modelica.SIunits.Resistance r_switch = 1E-5 "Switch forward resistance";
   parameter Modelica.SIunits.Conductance g_switch = 1E-5 "Switch reverse conductance";
   parameter Modelica.SIunits.Frequency f_s = 20e3 "Desired fixed switching frequency";
-  BasicComponents.switch switch(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = 90, origin = {-50, 46.118}), visible = true));
-  BasicComponents.diode diode1(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {-32.89, 46.118}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.switch switch1(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = 90, origin = {-50, -45.107}), visible = true));
-  BasicComponents.diode diode2(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {-32.89, -45.107}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.switch switch2(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = 90, origin = {0, 46.118}), visible = true));
-  BasicComponents.diode diode3(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {17.11, 46.118}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.switch switch3(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = 90, origin = {0, -45.107}), visible = true));
-  BasicComponents.diode diode4(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {17.11, -45.107}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.switch switch4(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = 90, origin = {49.997, 46.118}), visible = true));
-  BasicComponents.diode diode5(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {67.107, 46.118}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.switch switch5(r_on = r_switch, g_off = g_switch) annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = -270, origin = {50, -45.107}), visible = true));
-  BasicComponents.diode diode6(v_knee = Vdrop, r_on = r_diode, g_off = g_diode) annotation(Placement(visible = true, transformation(origin = {67.11, -45.107}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
+  BasicComponents.switch switch(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=90,
+        origin={-50,46.118}), visible=true));
+  BasicComponents.diode diode1(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={-32.89,46.118},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.switch switch1(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=90,
+        origin={-50,-45.107}), visible=true));
+  BasicComponents.diode diode2(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={-32.89,-45.107},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.switch switch2(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=90,
+        origin={0,46.118}), visible=true));
+  BasicComponents.diode diode3(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={17.11,46.118},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.switch switch3(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=90,
+        origin={0,-45.107}), visible=true));
+  BasicComponents.diode diode4(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={17.11,-45.107},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.switch switch4(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=90,
+        origin={49.997,46.118}), visible=true));
+  BasicComponents.diode diode5(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={67.107,46.118},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.switch switch5(r_on=r_switch, g_off=g_switch) annotation (
+      Placement(transformation(
+        extent={{10,-10},{-10,10}},
+        rotation=-270,
+        origin={50,-45.107}), visible=true));
+  BasicComponents.diode diode6(
+    v_knee=Vdrop,
+    r_on=r_diode,
+    g_off=g_diode) annotation (Placement(visible=true, transformation(
+        origin={67.11,-45.107},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
   Interfaces.PositivePin vdc_p annotation(Placement(visible = true, transformation(origin = {96.047, 85.548}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {92.547, 81.66}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Interfaces.NegativePin vdc_n annotation(Placement(visible = true, transformation(origin = {96.047, -85.159}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {92.936, -83.215}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Interfaces.PositivePin p1 annotation(Placement(visible = true, transformation(origin = {-96.047, 85.548}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-92.547, 83.215}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

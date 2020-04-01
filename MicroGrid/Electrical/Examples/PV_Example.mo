@@ -22,12 +22,22 @@ model PV_Example
                                                     Ts = 0.001, deltaVpvRefPanel = 0.05)                    annotation(Placement(visible = true, transformation(origin = {60.847, -38.803}, extent = {{12.829, -12.829}, {-12.829, 12.829}}, rotation = 180)));
   Control.Feedback.BoostControl boostControl1(TimeCons = 0.005, Gain = 0.005) annotation(Placement(visible = true, transformation(origin = {85, 17.808}, extent = {{15, 15}, {-15, -15}}, rotation = 270)));
   Sources.voltageDC V_dc(V = 400) annotation(Placement(visible = true, transformation(origin = {0, 84.848}, extent = {{15.152, -15.152}, {-15.152, 15.152}}, rotation = 0)));
-  BasicComponents.resistor resistor1(R = 0.02) annotation(Placement(visible = true, transformation(origin = {22.93, 17.192}, extent = {{-10, -10}, {10, 10}}, rotation = -270)));
-  BasicComponents.capacitor capacitor1(C = 0.00004, v(
-                                                    start =   0, fixed =   true))
-                                                                                 annotation(Placement(visible = true, transformation(origin = {-0.789, 3.769}, extent = {{10.789, -10.789}, {-10.789, 10.789}}, rotation = 0)));
+  BasicComponents.resistor resistor1(R=0.02) annotation (Placement(visible=true,
+        transformation(
+        origin={22.93,17.192},
+        extent={{-10,-10},{10,10}},
+        rotation=-270)));
+  BasicComponents.capacitor capacitor1(C=0.00004, v(start=0, fixed=true))
+    annotation (Placement(visible=true, transformation(
+        origin={-0.789,3.769},
+        extent={{10.789,-10.789},{-10.789,10.789}},
+        rotation=0)));
   Modelica.Blocks.Sources.Constant Temperature(k = 303) annotation(Placement(visible = true, transformation(origin = {-30, -112.41}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  BasicComponents.ground ground1 annotation(Placement(visible = true, transformation(origin = {-43.519, 83.762}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  BasicComponents.ground ground1 annotation (Placement(visible=true,
+        transformation(
+        origin={-43.519,83.762},
+        extent={{-10,-10},{10,10}},
+        rotation=-90)));
   Modelica.Blocks.Sources.Trapezoid Irradiation(offset = 700, falling = 0.1, rising = 0.1, amplitude = 100, width = 0.3, startTime = 0.1) annotation(Placement(visible = true, transformation(origin = {38.371, -110}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
 equation
   connect(currentSensor1.p, voltageSensor1.p) annotation(Line(visible = true, origin = {14.66, -53.506}, points = {{0.209, 7.824}, {0.209, -3.912}, {-0.418, -3.912}}, color = {0, 0, 255}));

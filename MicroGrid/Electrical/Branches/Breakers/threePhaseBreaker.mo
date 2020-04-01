@@ -8,11 +8,21 @@ model threePhaseBreaker "Ideal three-phase breaker."
   Electrical.Interfaces.NegativePin n1 annotation (Placement(transformation(extent={{86,50},{106,70}})));
   Electrical.Interfaces.NegativePin n2 annotation (Placement(transformation(extent={{86,-10},{106,10}})));
   Electrical.Interfaces.NegativePin n3 annotation (Placement(transformation(extent={{86,-70},{106,-50}})));
-  BasicComponents.switch            switch1(g_off=1E-7)   annotation(Placement(visible = true, transformation(origin={-0.442,
-            60},                                                                                                                      extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  BasicComponents.switch            switch2(g_off=1E-7)   annotation(Placement(visible = true, transformation(origin={0.167,0},     extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  BasicComponents.switch            switch3(g_off=1E-7)   annotation(Placement(visible = true, transformation(origin={-0.001,
-            -60},                                                                                                                     extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  BasicComponents.switch switch1(g_off=1E-7) annotation (Placement(visible=true,
+        transformation(
+        origin={-0.442,60},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  BasicComponents.switch switch2(g_off=1E-7) annotation (Placement(visible=true,
+        transformation(
+        origin={0.167,0},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  BasicComponents.switch switch3(g_off=1E-7) annotation (Placement(visible=true,
+        transformation(
+        origin={-0.001,-60},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
 equation
 
   connect(p1, switch1.p)

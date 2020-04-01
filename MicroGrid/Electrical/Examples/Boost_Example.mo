@@ -2,9 +2,18 @@ within MicroGrid.Electrical.Examples;
 model Boost_Example
   extends Modelica.Icons.Example;
   MicroGrid.Electrical.Sources.voltageDC voltageDC(V = 1.5) annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-68, 10})));
-  MicroGrid.Electrical.BasicComponents.ground ground annotation(Placement(transformation(extent = {{-78, -34}, {-58, -14}})));
-  MicroGrid.Electrical.BasicComponents.capacitor OutputCapacitor(C = 0.00047, v(fixed = true)) annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {14, 10})));
-  MicroGrid.Electrical.BasicComponents.resistor LoadResistor(R = 75) annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {40, 10})));
+  MicroGrid.Electrical.BasicComponents.ground ground
+    annotation (Placement(transformation(extent={{-78,-34},{-58,-14}})));
+  MicroGrid.Electrical.BasicComponents.capacitor OutputCapacitor(C=0.00047, v(
+        fixed=true)) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=-90,
+        origin={14,10})));
+  MicroGrid.Electrical.BasicComponents.resistor LoadResistor(R=75) annotation (
+      Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=-90,
+        origin={40,10})));
   MicroGrid.Electrical.Converters.Boost switchedBoost(
     L_boost=0.0001,
     f_s=50000,
