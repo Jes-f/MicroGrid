@@ -43,9 +43,9 @@ model BuckBoost "DC/DC Buck-Boost Converter"
         origin={43.111,40},
         extent={{-10,10},{10,-10}},
         rotation=0)));
-  Modelica.Blocks.Logical.Not not1 annotation(Placement(visible = true, transformation(origin={42.4985,
-            16.3605},                                                                                             extent={{-9.5015,
-            -9.6395},{9.5015,9.6395}},                                                                                                                         rotation=90)));
+  Modelica.Blocks.Logical.Not not1 annotation(Placement(visible = true, transformation(origin={26.4985,
+            -1.6395},                                                                                             extent={{-9.5015,
+            -9.6395},{9.5015,9.6395}},                                                                                                                         rotation=180)));
 equation
   connect(InputInductor.p, Input_p) annotation(Line(points = {{-48, 26}, {-60, 26}, {-60, 51}, {-76, 51}}, color = {0, 0, 255}, visible = true, origin = {-20, 29}));
   connect(diode.n, Output_p) annotation(Line(points = {{32.555, 26}, {60, 26}, {60, 51}, {77.555, 51}}, color = {0, 0, 255}, visible = true, origin = {18.445, 29}));
@@ -63,11 +63,11 @@ equation
           1.417},{-11.083,-1.583},{11.082,-1.583},{11.082,1.75}},                                                                                                           color = {0, 0, 255}));
   connect(switch1.p, diode.p) annotation(Line(visible = true, origin = {35.074, 50}, points = {{0.037, -10}, {0.037, 5}, {-0.074, 5}}, color = {0, 0, 255}));
   connect(switch1.n, diode.n) annotation(Line(visible = true, origin = {51.074, 50}, points = {{0.037, -10}, {0.037, 5}, {-0.074, 5}}, color = {0, 0, 255}));
-  connect(switch1.control, not1.y) annotation (Line(points={{43.111,33},{42,33},
-          {42,26.8121},{42.4985,26.8121}}, color={255,0,255}));
-  connect(switch.control, sawtoothPWM.fire)
-    annotation (Line(points={{7,-2},{36,-2},{36,-61}}, color={255,0,255}));
-  connect(not1.u, sawtoothPWM.fire) annotation (Line(points={{42.4985,4.9587},{
-          42.4985,-2},{36,-2},{36,-61}}, color={255,0,255}));
+  connect(switch.control, not1.y) annotation (Line(points={{7,-2},{12,-2},{12,
+          -1.6395},{16.0468,-1.6395}}, color={255,0,255}));
+  connect(sawtoothPWM.fire, switch1.control) annotation (Line(points={{36,-61},
+          {36,-22},{43.111,-22},{43.111,33}}, color={255,0,255}));
+  connect(not1.u, switch1.control) annotation (Line(points={{37.9003,-1.6395},{
+          44,-2},{43.111,-2},{43.111,33}}, color={255,0,255}));
   annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible = true, origin = {46.093, -32.57}, extent = {{-37.781, -32.57}, {37.781, 32.57}}, textString = "DC"), Text(visible = true, origin = {-32.219, 47.43}, extent = {{-37.781, -32.57}, {37.781, 32.57}}, textString = "DC")}));
 end BuckBoost;
