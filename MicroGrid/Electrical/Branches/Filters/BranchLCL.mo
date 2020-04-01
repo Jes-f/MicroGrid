@@ -49,6 +49,8 @@ equation
       points={{0,-10},{0,0},{20,0}},
       color={0,0,255},
       smooth=Smooth.Bezier));
+  connect(inductor1.n, resistor2.p)
+    annotation (Line(points={{-20,0},{20,0}}, color={0,0,255}));
   annotation (Icon(graphics={
         Text(
           extent={{-152,79},{148,39}},
