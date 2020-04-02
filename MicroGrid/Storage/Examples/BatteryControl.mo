@@ -45,19 +45,19 @@ model BatteryControl "Control of a battery bank"
         rotation=0)));
   Modelica.Blocks.Math.Feedback feedbackP1
     annotation (Placement(transformation(extent={{-78,-22},{-66,-34}})));
-  Modelica.Blocks.Math.Gain gain4(k=0.002/0.001)
+  Modelica.Blocks.Math.Gain gain4(k=0.002/0.0005)
     annotation (Placement(transformation(extent={{-44,-26},{-32,-14}})));
   Modelica.Blocks.Continuous.Integrator integrator1(
-    k=0.1/0.001,
+    k=0.1/0.0005,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0)
     annotation (Placement(transformation(extent={{-44,-44},{-32,-32}})));
   Modelica.Blocks.Math.Add add1
     annotation (Placement(transformation(extent={{-26,-36},{-14,-24}})));
-  Modelica.Blocks.Math.Gain gain5(k=0.002/1)
+  Modelica.Blocks.Math.Gain gain5(k=0.002/4)
     annotation (Placement(transformation(extent={{26,-28},{38,-16}})));
   Modelica.Blocks.Continuous.Integrator integrator2(
-    k=0.1/1,
+    k=0.1/4,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0)
     annotation (Placement(transformation(extent={{26,-46},{38,-34}})));
